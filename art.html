@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>СЛЕД В ИСКУССТВЕ</title>
+  <link rel="stylesheet" href="style-art.css">
+</head>
+<body>
+
+  <!-- Главный фон -->
+  <div class="background"></div>
+
+  <!-- Шапка (меню) -->
+  <header class="pixel-header">
+    <a href="index.html">
+  <img src="image/logo.png" alt="Логотип" class="logo">
+</a>
+    <a href="index.html" class="nav-link main">ГЛАВНАЯ</a>
+    <a href="external structure.html" class="nav-link link1">СТРОЕНИЕ</a>
+    <a href="habitat.html" class="nav-link link2">СРЕДА ОБИТАНИЯ</a>
+    <a href="foodandenemies.html" class="nav-link link3">ПИТАНИЕ И ВРАГИ</a>
+    <a href="kitsune.html" class="nav-link link4">О КИЦУНЭ</a>
+    <a href="art.html" class="nav-link link5">СЛЕД В ИСКУССТВЕ</a>
+  </header>
+
+  <div class="art">СЛЕД В ИСКУССТВЕ</div>
+   <div class="text">
+      Лиса — это не просто животное в дикой природе
+    </div>
+    <div class="text2">
+      Это мощный символ, который нашел отражение в искусстве на протяжении веков
+    </div>
+
+    <section class="horizontal-scroll-section">
+    <div class="horizontal-wrapper">
+      <div class="image">
+        <img src="image/movie1.png" alt="Картинка 1">
+        <div class="caption">Лисы Тиронул</div>
+      </div>
+      <div class="image">
+        <img src="image/movie2.png" alt="Картинка 2">
+        <div class="caption">Велосипед Таканэ</div>
+      </div>
+      <div class="image">
+        <img src="image/movie3.png" alt="Картинка 3">
+        <div class="caption">Лисёнок Гон</div>
+      </div>
+      <div class="image">
+        <img src="image/movie4.png" alt="Картинка 4">
+        <div class="caption">Очень приятно, Бог</div>
+      </div>
+      <div class="image">
+        <img src="image/movie5.png" alt="Картинка 5">
+        <div class="caption">Девочка-лисичка</div>
+      </div>
+      <!-- Добавляйте новые .image блоки по тому же принципу -->
+    </div>
+  </section>
+  <!-- JS для управления прокруткой -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.horizontal-scroll-section');
+      const wrapper = section.querySelector('.horizontal-wrapper');
+
+      // Вычисляем, на сколько пикселей нужно «растянуть» вертикальную секцию:
+      // 1) wrapper.scrollWidth = общая ширина всех картинок вместе
+      // 2) window.innerWidth = ширина экрана, на которой видно первая картинка.
+      // 3) Разница = длина горизонтального сдвига
+      // 4) Добавляем ещё «height» самого экрана, чтобы после окончания горизонтального слайдера можно было прокрутиться вниз.
+      const horizontalScrollLength = wrapper.scrollWidth - window.innerWidth;
+      const totalSectionHeight = window.innerHeight + horizontalScrollLength;
+
+      // Устанавливаем вычисленную высоту секции
+      section.style.height = totalSectionHeight + 'px';
+
+      // Чуть позже — обработчик скролла:
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const sectionTop = section.offsetTop;
+        const scrollProgress = scrollTop - sectionTop;
+
+        // Если внутри секции:
+        if (scrollProgress >= 0 && scrollProgress <= horizontalScrollLength) {
+          wrapper.style.transform = `translateX(-${scrollProgress}px)`;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+<div class="movie">КИНО</div>
+
+<img src="image/backgroundforkitsune.png" class="backgroundmiddle" />
+<img src="image/backgroundforillu.png" class="backgroundillu" />
+
+<div class="image-hover-box" style="left: 399px; top: 2572px; width: 460px; height: 673px;">
+  <img src="image/illu1.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu11.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 212px; left: 270px; white-space: nowrap; width: 432px;">
+  «Возрожденный Дакки по <br>
+  волшебству появляется <br>
+  в зале почтовой станции» <br><br>
+  Утагава Куниёси 
+</div>
+</div>
+
+<div class="image-hover-box" style="left: 1043px; top: 2572px; width: 460px; height: 673px;">
+  <img src="image/illu2.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu22.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 274px; left: 325px; white-space: nowrap; width: 432px;">
+  «Равнина Мусаси» <br> <br> Цукиока Ёситоси 
+</div>
+</div>
+
+<div class="image-hover-box" style="left: 399px; top: 3326px; width: 453px; height: 673px;">
+  <img src="image/illu3.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu33.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 273px; left: 325px; white-space: nowrap; width: 432px;">
+  «Тень Кицунэ» <br><br> Утагава Куниёси
+</div>
+</div>
+
+<div class="image-hover-box" style="left: 1043px; top: 3326px; width: 480px; height: 431px;">
+  <img src="image/illu4.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu44.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 152px; left: 325px; white-space: nowrap; width: 432px;">
+  «Лис и Охотник» <br><br>Утагава Хиросигэ 
+</div>
+</div>
+
+<div class="image-hover-box" style="left: 396px; top: 4080px; width: 460px; height: 657px;">
+  <img src="image/illu5.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu55.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 245px; left: 305px; white-space: nowrap; width: 432px;">
+  «Девушки Кицунэ <br> в танце» <br> <br> Берта Бойнтон Лам 
+</div>
+</div>
+
+<div class="image-hover-box" style="left: 1049px; top: 3838px; width: 467px; height: 535px;">
+  <img src="image/illu6.png" alt="Основное изображение" class="base-image">
+  <img src="image/illu66.png" alt="Наложенное изображение" class="overlay-image">
+  <div class="caption" style="top: 184px; left: 305px; white-space: nowrap; width: 432px;">
+  «Лиса, ловящая <br>женщину»<br><br>Китагава Утамаро 
+</div>
+</div>
+
+    <div class="text3">
+      Мелькнул хвост лисий.<br>Нет теперь мне покоя –<br>Жду каждый вечер.
+    </div>
+    <div class="text4">
+      Сюраюки Тамба, XVIII век
+    </div>
+
+        <footer class="footer-section">
+      <img src="image/footer-background.png" alt="Фон футера" class="footer-bg">
+      <img src="image/logo.png" alt="Логотип" class="footer-logo">
+      <div class="footer-title">РЫЖАЯ ЛИСИЦА</div>
+      <a href="https://www.vhutein.ru/" target="_blank"> <img src="image/vhutein.png" alt="ВХУТЕИН" class="footer-vhutein" /> </a>
+      <a href="https://vk.com/vhutein" target="_blank"> <img src="image/vk.png" alt="ВКонтакте" class="footer-vk">ВК</a>
+      <a href="https://t.me/vhutein" target="_blank"> <img src="image/tg.png" alt="Телеграм" class="footer-tg">ТГ</a>
+      <img src="image/footer-fox.png" alt="Лисичка" class="footer-fox">
+
+      <!-- Нижнее меню -->
+      <a href="index.html" class="footer-nav main">ГЛАВНАЯ</a>
+      <a href="external structure.html" class="footer-nav link1">СТРОЕНИЕ</a>
+      <a href="habitat.html" class="footer-nav link2">СРЕДА ОБИТАНИЯ</a>
+      <a href="foodandenemies.html" class="footer-nav link3">ПИТАНИЕ И ВРАГИ</a>
+      <a href="kitsune.html" class="footer-nav link4">О КИЦУНЭ</a>
+      <a href="art.html" class="footer-nav link5">СЛЕД В ИСКУССТВЕ</a>
+    </footer>

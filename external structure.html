@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>СТРОЕНИЕ</title>
+  <link rel="stylesheet" href="style-structure.css">
+</head>
+<body>
+
+  <!-- Главный фон -->
+  <div class="background"></div>
+
+  <!-- Шапка (меню) -->
+  <header class="pixel-header">
+    <a href="index.html">
+  <img src="image/logo.png" alt="Логотип" class="logo">
+</a>
+    <a href="index.html" class="nav-link main">ГЛАВНАЯ</a>
+    <a href="external structure.html" class="nav-link link1">СТРОЕНИЕ</a>
+    <a href="habitat.html" class="nav-link link2">СРЕДА ОБИТАНИЯ</a>
+    <a href="foodandenemies.html" class="nav-link link3">ПИТАНИЕ И ВРАГИ</a>
+    <a href="kitsune.html" class="nav-link link4">О КИЦУНЭ</a>
+    <a href="art.html" class="nav-link link5">СЛЕД В ИСКУССТВЕ</a>
+  </header>
+
+<div class="omamori-container">
+  <!-- Поворачиваем только само изображение -->
+  <img src="image/Omamori.png" class="Omamori" alt="Омамори" />
+
+  <!-- Ниже — восемь абсолютно позиционированных тегов -->
+  <!-- У каждого свой style="top/left/width/height/transform" -->
+
+  <!-- 1) ДОМЕН -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 360.39px;
+         left: 450.33px;
+         width: 129px;
+         height: 39px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">ДОМЕН</div>
+    <div class="tag-hover">Eukaryota</div>
+  </div>
+
+  <!-- 2) ЦАРСТВО -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 408.39px;
+         left: 445.33px;
+         width: 204px;
+         height: 51px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">ЦАРСТВО</div>
+    <div class="tag-hover">ЖИВОТНЫЕ</div>
+  </div>
+
+  <!-- 3) ТИП -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 473.39px;
+         left: 504.33px;
+         width: 129px;
+         height: 39px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">ТИП</div>
+    <div class="tag-hover">ХОРДОВЫЕ</div>
+  </div>
+
+  <!-- 4) КЛАСС -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 525.39px;
+         left: 490.33px;
+         width: 219px;
+         height: 42px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">КЛАСС</div>
+    <div class="tag-hover">МЛЕКОПИТАЮЩИЕ</div>
+  </div>
+
+  <!-- 5) ОТРЯД -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 585.39px;
+         left: 565.33px;
+         width: 117px;
+         height: 43px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">ОТРЯД</div>
+    <div class="tag-hover">ХИЩНЫЕ</div>
+  </div>
+
+  <!-- 6) СЕМЕЙСТВО -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 640.39px;
+         left: 560.33px;
+         width: 199px;
+         height: 51px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">СЕМЕЙСТВО</div>
+    <div class="tag-hover">ПСОВЫЕ</div>
+  </div>
+
+  <!-- 7) РОД -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 700.39px;
+         left: 640.33px;
+         width: 101px;
+         height: 43px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">РОД</div>
+    <div class="tag-hover">ЛИСИЦЫ</div>
+  </div>
+
+  <!-- 8) ВИД -->
+  <div class="tag-wrapper"
+       style="
+         position: absolute;
+         top: 760px;
+         left: 580.33px;
+         width: 308px;
+         height: 51px;
+         transform: rotate(-25deg) scale(1);
+       ">
+    <div class="tag">ВИД</div>
+    <div class="tag-hover">ОБЫКНОВЕННАЯ ЛИСИЦА</div>
+  </div>
+
+</div>
+
+  <div class="classification">КЛАССИФИКАЦИЯ</div>
+
+  <div class="classification-text">
+      Только 10 видов этой группы относят<b>
+        к роду собственно лисиц
+      </b>
+    </div>
+
+    <!-- Цветы -->
+    <img src="image/flower 1.png" class="flower flower-left" />
+    <img src="image/flower 2.png" class="flower flower-right" />
+<img src="image/background for external structure.png" class="white_background" />
+
+    <img 
+    src="image/fox external structure.png" 
+    class="fox" 
+    alt="лиса внешнее строение" 
+    onclick="toggleAnnotations()" 
+  />
+
+  <!-- Заголовок -->
+  <div class="externalstructure">ВНЕШНЕЕ СТРОЕНИЕ</div>
+
+  <!-- Стрелочки -->
+  <img 
+    src="image/arrow.png" 
+    alt="Стрелочки" 
+    class="arrows hidden" 
+    id="arrowImage" 
+  />
+
+  <div class="label hidden" style="top: 1812.56px; left: 269.06px;">глаза</div>
+  <div class="label hidden" style="top: 1691.56px; left: 408.06px;">голова</div>
+  <div class="label hidden" style="top: 1951.56px; left: 445.06px;">нос</div>
+  <div class="label hidden" style="top: 2188.56px; left: 509.06px;">лапы</div>
+  <div class="label hidden" style="top: 1805.56px; left: 1417.06px;">туловище</div>
+  <div class="label hidden" style="top: 2089.56px; left: 1565.06px;">хвост</div>
+
+  <script>
+    function toggleAnnotations() {
+      document.querySelectorAll('.label, .arrows').forEach(el => {
+        el.classList.toggle('hidden');
+      });
+    }
+  </script>
+
+<div class="background2"></div>
+
+<div class="individualcharacteristics">ИНДИВИДУАЛЬНЫЕ ОСОБЕННОСТИ</div>
+
+<div class="container">
+  <div class="photo-wrapper wrapper1">
+    <img src="image/foxleft.png" class="photo">
+    <img src="image/circle frame.png" class="circleframe">
+  </div>
+
+  <div class="photo-wrapper wrapper2">
+    <img src="image/foxright.png" class="photo">
+    <img src="image/circle frame.png" class="circleframe">
+  </div>
+
+  <div class="photo-wrapper wrapper3">
+    <img src="image/foxright2.png" class="photo">
+    <img src="image/circle frame.png" class="circleframe">
+  </div>
+</div>
+
+<footer class="footer-section">
+      <img src="image/footer-background.png" alt="Фон футера" class="footer-bg">
+      <img src="image/logo.png" alt="Логотип" class="footer-logo">
+      <div class="footer-title">РЫЖАЯ ЛИСИЦА</div>
+      <a href="https://www.vhutein.ru/" target="_blank"> <img src="image/vhutein.png" alt="ВХУТЕИН" class="footer-vhutein" /> </a>
+      <a href="https://vk.com/vhutein" target="_blank"> <img src="image/vk.png" alt="ВКонтакте" class="footer-vk">ВК</a>
+      <a href="https://t.me/vhutein" target="_blank"> <img src="image/tg.png" alt="Телеграм" class="footer-tg">ТГ</a>
+      <img src="image/footer-fox.png" alt="Лисичка" class="footer-fox">
+
+      <!-- Нижнее меню -->
+      <a href="index.html" class="footer-nav main">ГЛАВНАЯ</a>
+      <a href="external structure.html" class="footer-nav link1">СТРОЕНИЕ</a>
+      <a href="habitat.html" class="footer-nav link2">СРЕДА ОБИТАНИЯ</a>
+      <a href="foodandenemies.html" class="footer-nav link3">ПИТАНИЕ И ВРАГИ</a>
+      <a href="kitsune.html" class="footer-nav link4">О КИЦУНЭ</a>
+      <a href="art.html" class="footer-nav link5">СЛЕД В ИСКУССТВЕ</a>
+    </footer>

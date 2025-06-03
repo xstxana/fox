@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ПИТАНИЕ И ВРАГИ</title>
+  <link rel="stylesheet" href="style-food.css">
+</head>
+<body>
+
+  <!-- Главный фон -->
+  <div class="background"></div>
+
+  <!-- Шапка (меню) -->
+  <header class="pixel-header">
+    <a href="index.html">
+  <img src="image/logo.png" alt="Логотип" class="logo">
+</a>
+    <a href="index.html" class="nav-link main">ГЛАВНАЯ</a>
+    <a href="external structure.html" class="nav-link link1">СТРОЕНИЕ</a>
+    <a href="habitat.html" class="nav-link link2">СРЕДА ОБИТАНИЯ</a>
+    <a href="foodandenemies.html" class="nav-link link3">ПИТАНИЕ И ВРАГИ</a>
+    <a href="kitsune.html" class="nav-link link4">О КИЦУНЭ</a>
+    <a href="art.html" class="nav-link link5">СЛЕД В ИСКУССТВЕ</a>
+  </header>
+
+  <div class="food">ЧЕМ ПИТАЮТСЯ ЛИСЫ?</div>
+
+<!-- Первая обложка -->
+<img 
+  src="image/cover.png" 
+  class="cover" 
+  alt="обложка" 
+  onclick="toggleAnnotations('fish', 'label1')" 
+/>
+
+<img 
+  src="image/fish.png" 
+  alt="рыба" 
+  class="overlay" 
+  id="fish"
+  style="left: 456px;"
+/>
+
+<div class="label" id="label1" style="top: 729px; left: 558px;">рыба</div>
+
+<!-- Вторая обложка -->
+<img 
+  src="image/cover.png" 
+  class="cover" 
+  style="left: 818px;" 
+  alt="обложка" 
+  onclick="toggleAnnotations('berries', 'label2')" 
+/>
+
+<img 
+  src="image/berries.png" 
+  alt="ягоды" 
+  class="overlay" 
+  id="berries" 
+  style="left: 818px;"
+/>
+
+<div class="label" id="label2" style="top: 729px; left: 902px;">ягоды</div>
+
+<!-- Третья обложка -->
+<img 
+  src="image/cover.png" 
+  class="cover" 
+  style="left: 1158px;" 
+  alt="обложка" 
+  onclick="toggleAnnotations('rat', 'label3')" 
+/>
+
+<img 
+  src="image/rat.png" 
+  alt="грызуны" 
+  class="overlay" 
+  id="rat" 
+  style="left: 1158px;"
+/>
+
+<div class="label" id="label3" style="top: 729px; left: 1227px;">грызуны</div>
+
+<!-- Скрипт -->
+<script>
+  function toggleAnnotations(imageId, labelId) {
+    const image = document.getElementById(imageId);
+    const label = document.getElementById(labelId);
+
+    image.classList.toggle('visible');
+    label.classList.toggle('visible');
+  }
+</script>
+
+<!-- Фоновый цвет -->
+<div class="background-color-layer"></div>
+
+<!-- Изображение поверх -->
+<div class="background-image-layer">
+  <img src="image/background for circle frame.png" class="background-image" alt="фон">
+</div>
+
+<div class="enemies-section hidden-on-scroll">
+  <h2 class="enemies-title">ВРАГИ</h2>
+  <div class="enemies-images">
+    <img src="image/human.png" alt="Человек" class="enemy-img">
+    <img src="image/wolf.png" alt="Волк" class="enemy-img">
+    <img src="image/hawk.png" alt="Ястреб" class="enemy-img">
+  </div>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show-on-scroll');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  document.querySelectorAll('.hidden-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+<footer class="footer-section">
+      <img src="image/footer-background.png" alt="Фон футера" class="footer-bg">
+      <img src="image/logo.png" alt="Логотип" class="footer-logo">
+      <div class="footer-title">РЫЖАЯ ЛИСИЦА</div>
+      <a href="https://www.vhutein.ru/" target="_blank"> <img src="image/vhutein.png" alt="ВХУТЕИН" class="footer-vhutein" /> </a>
+      <a href="https://vk.com/vhutein" target="_blank"> <img src="image/vk.png" alt="ВКонтакте" class="footer-vk">ВК</a>
+      <a href="https://t.me/vhutein" target="_blank"> <img src="image/tg.png" alt="Телеграм" class="footer-tg">ТГ</a>
+      <img src="image/footer-fox.png" alt="Лисичка" class="footer-fox">
+
+      <!-- Нижнее меню -->
+      <a href="index.html" class="footer-nav main">ГЛАВНАЯ</a>
+      <a href="external structure.html" class="footer-nav link1">СТРОЕНИЕ</a>
+      <a href="habitat.html" class="footer-nav link2">СРЕДА ОБИТАНИЯ</a>
+      <a href="foodandenemies.html" class="footer-nav link3">ПИТАНИЕ И ВРАГИ</a>
+      <a href="kitsune.html" class="footer-nav link4">О КИЦУНЭ</a>
+      <a href="art.html" class="footer-nav link5">СЛЕД В ИСКУССТВЕ</a>
+    </footer>

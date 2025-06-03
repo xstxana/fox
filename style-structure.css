@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 4415px;
+  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+}
+
+body {
+  font-family: "Anticva", sans-serif;
+  background-color: #fff;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1536px;
+  background-color: #1D1D17; /* фоновый цвет */
+  z-index: -2;
+  overflow: hidden;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("image/background\ for\ circle\ frame.png"); /* без экранирования */
+  background-size: cover;
+  background-position: top center;
+  opacity: 1; /* прозрачность только у изображения */
+  z-index: -1;
+}
+
+.pixel-header {
+  position: absolute;
+  width: 1920px;
+  height: 80px;
+  z-index: 10;
+}
+
+.logo {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  left: 58px;
+  top: 14px;
+}
+
+.nav-link {
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #f2e8da;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:not(.main):hover {
+  transform: scale(1.1);
+  color: #e4b94d;
+}
+
+.main {
+    position: absolute;
+  left: 134px;
+  top: 31px;
+}
+
+.link1 {
+  left: 703px;
+  top: 33px;
+}
+
+.link2 {
+  left: 891px;
+  top: 33px;
+}
+
+.link3 {
+  left: 1160px;
+  top: 34px;
+}
+
+.link4 {
+  left: 1425px;
+  top: 33px;
+}
+
+.link5 {
+  left: 1613px;
+  top: 33px;
+}
+
+/* 1) Корневой контейнер Омамори + кнопки */
+.omamori-container {
+  position: relative;
+  width: 1300px;               /* Подгоните под свою ширину Omamori */
+  /* Здесь НЕТ rotate! */
+  /*margin: 20px auto;    */       /* Чтобы при желании центрировать */
+}
+
+/* 2) Сама картинка Омамори */
+.Omamori {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotate(-2.93deg); /* Поворачиваем только изображение */
+  user-select: none;
+  pointer-events: none;        /* Чтобы клики шли к .tag-wrapper */
+  z-index: 0;
+}
+
+/* 3) Каждый блок «тег» (кнопка + hover-слой) */
+.tag-wrapper {
+  position: absolute;          /* here coordinates from inline style work correctly */
+  cursor: pointer;
+  z-index: 1;                  /* Чтобы была над картинкой */
+}
+
+/* 4) Базовый (nie-hover) вид кнопки */
+.tag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #FBF1E5;
+  color: #1F190F;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8px;  
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+/* При наведении на кнопку подсвечиваем фон (необязательно) */
+.tag:hover {
+  background-color: #E8DCC8;
+}
+
+/* 5) Hover-слой, который появляется при наведении */
+.tag-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D6C9B3;
+  color: #1F190F;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8px;     /* чтобы длинный текст комфортно оборачивался */
+  opacity: 0;         /* изначально скрыт */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;         /* поверх .tag */
+}
+
+/* 6) При наведении на весь блок (.tag-wrapper) отображаем hover-слой */
+.tag-wrapper:hover .tag-hover {
+  opacity: 1;
+}
+
+
+.classification {
+  position: absolute;
+  width: 563px;
+  height: 70px;
+  top: 304px;
+  left: 1053px;
+  font-size: 58px;
+  color: #FBF1E5;
+  text-align: center;
+  z-index: 1;
+}
+
+.classification-text {
+  font-family: "Cormorant";
+  position: absolute;
+  width: 531px;
+  height: 90px;
+  top: 435px;
+  left: 1058px;
+  font-size: 35px;
+  line-height: 1.5;
+  color: #F9F1E6;
+  z-index: 4;
+}
+
+.flower {
+  position: absolute;
+  animation: spin 10s linear infinite;
+  z-index: 2;
+}
+
+.flower-left {
+  width: 383px;
+  height: 383px;
+  top: 639.27px;
+  left: 300px;
+}
+
+.flower-right {
+  width: 155px;
+  height: 155px;
+  top: 215.22px;
+  left: 650px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.white_background {
+  position: absolute;
+  top: 1428px;
+  left: 0;
+  width: 1923.5px;
+  height: 996.52px;
+  z-index: 0;
+}
+
+.fox {
+  position: absolute;
+  top: 1627.56px;
+  left: 482.06px;
+  width: 995px;
+  height: 680px;
+  z-index: 1;
+}
+
+.externalstructure {
+  position: absolute;
+  width: 652px;
+  height: 70px;
+  top: 1531.56px;
+  left: 616.06px;
+  font-size: 58px;
+  color: #1F190F;
+  text-align: center;
+  z-index: 2;
+}
+
+.fox-annotations {
+  position: absolute;
+  top: 1627.56px;
+  left: 482.06px;
+  width: 995px;
+  height: 680px;
+  z-index: 3;
+  pointer-events: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fox-annotations.hidden {
+  display: none;
+}
+
+.arrows {
+  position: absolute;
+  top: 1648.23px;     /* Совпадает с fox top */
+  left: 379.06px;     /* Совпадает с fox left */
+  width: 1174px;       /* Размер стрелочек */
+  height: 548px;
+  z-index: 4;
+  pointer-events: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Подписи */
+.label {
+  position: absolute;
+  background: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 26px;         /* <<< МЕНЯЙ размер шрифта тут */
+  color: #000000;             /* <<< МЕНЯЙ цвет текста тут */
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: popIn 0.6s ease forwards;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Скрытие */
+.hidden {
+  display: none;
+}
+
+.background2 {
+  position: absolute;
+  top: 2086px; /* добавили px */
+  left: 0;
+  width: 1920px;
+  height: 1536px;
+  background-color: #1D1D17;
+  z-index: -2; /* должен быть видимым */
+  overflow: hidden;
+}
+
+.background2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("image/background for circle frame.png"); /* без экранирования */
+  background-size: cover;
+  background-position: top center;
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.individualcharacteristics {
+  position: absolute;
+  width: 1116px;
+  height: 70px;
+  top: 2684px;
+  left: 398px;
+  font-size: 58px;
+  color: #FAF3E3;
+  text-align: center;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 4415px;
+  background: none;
+}
+
+.photo-wrapper {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  overflow: hidden;
+}
+
+/* Индивидуальные позиции */
+.wrapper1 {
+  top: 2839px;
+  left: 250.5px;
+}
+
+.wrapper2 {
+  top: 2879px;
+  left: 772.5px;
+}
+
+.wrapper3 {
+  top: 2879px;
+  left: 1275.5px;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circleframe {
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 60s linear infinite;
+  transform-origin: 50% 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Индивидуальное позиционирование */
+.wrapper1 { top: 2879px; left: 250.5px; }
+.wrapper2 { top: 2879px; left: 772.5px; }
+.wrapper3 { top: 2879px; left: 1275.5px; }
+
+/* === НИЖНИЙ ХЕДЕР (ФУТЕР) === */
+.footer-section {
+  position: absolute;
+  width: 1920px;
+  height: 723px;
+  top: 3622px;
+}
+
+/* Фон футера */
+.footer-bg {
+  position: absolute;
+  width: 1920px;
+  height: 723px;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+/* Логотип */
+.footer-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 144px; /* 4586 - 4442 */
+  left: 433px;
+  z-index: 1;
+}
+
+/* "Рыжая лисица" */
+.footer-title {
+  position: absolute;
+  width: 177px;
+  height: 24px;
+  top: 172px;
+  left: 532px;
+  font-size: 20px;
+  color: #f2e8da;
+  font-family: "Anticva";
+  z-index: 1;
+}
+
+.footer-vhutein {
+  position: absolute;
+  width: 218px;
+  height: 42px;
+  top: 300px;
+  left: 447px;
+  z-index: 1;
+}
+
+/* VK */
+.footer-vk {
+  position: absolute;
+  width: 71px;
+  height: 39px;
+  top: 367px;
+  left: 447px;
+  z-index: 1;
+}
+
+/* Telegram */
+.footer-tg {
+  position: absolute;
+  width: 44px;
+  height: 41px;
+  top: 367px;
+  left: 548px;
+  z-index: 1;
+}
+
+/* Лисичка с цветочками */
+.footer-fox {
+  position: absolute;
+  width: 570.17px;
+  height: 462px;
+  top: 87px; /* 4529 - 4442 */
+  left: 982px;
+  z-index: 1;
+}
+
+/* Нижнее меню */
+.footer-nav {
+  position: absolute;
+  font-size: 16px;
+  color: #f2e8da;
+  font-family: "Anticva";
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.footer-nav.main {
+  width: 97px;
+  top: 595px;
+  left: 336px;
+}
+
+.footer-nav.link1 {
+  width: 115px;
+  top: 595px;
+  left: 488px;
+}
+
+.footer-nav.link2 {
+  width: 224px;
+  top: 593px;
+  left: 651px;
+}
+
+.footer-nav.link3 {
+  width: 222px;
+  top: 593px;
+  left: 914px;
+}
+
+.footer-nav.link4 {
+  width: 133px;
+  top: 593px;
+  left: 1175px;
+}
+
+.footer-nav.link5 {
+  width: 245px;
+  top: 593px;
+  left: 1347px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>СРЕДА ОБИТАНИЯ</title>
+  <link rel="stylesheet" href="style-habitat.css">
+</head>
+<body>
+
+  <!-- Главный фон -->
+  <div class="background"></div>
+
+  <!-- Шапка (меню) -->
+  <header class="pixel-header">
+    <a href="index.html">
+  <img src="image/logo.png" alt="Логотип" class="logo">
+</a>
+    <a href="index.html" class="nav-link main">ГЛАВНАЯ</a>
+    <a href="external structure.html" class="nav-link link1">СТРОЕНИЕ</a>
+    <a href="habitat.html" class="nav-link link2">СРЕДА ОБИТАНИЯ</a>
+    <a href="foodandenemies.html" class="nav-link link3">ПИТАНИЕ И ВРАГИ</a>
+    <a href="kitsune.html" class="nav-link link4">О КИЦУНЭ</a>
+    <a href="art.html" class="nav-link link5">СЛЕД В ИСКУССТВЕ</a>
+  </header>
+
+  <div class="reproduction">РАЗМНОЖЕНИЕ</div>
+
+  <div class="text">
+      В воспитании лисят участвуют оба родителя.<br>
+      Первые две недели самец не допускается<br>
+      в логово, а только охраняет вход в него.<br>
+      Он приносит пищу для самки, не отлучающейся<br>
+      от щенков<br>
+    </div>
+
+    <div class="container">
+  <div class="photo-wrapper wrapper1">
+    <img src="image/foxparent.png" class="photo">
+    <img src="image/circle frame.png" class="circleframe">
+  </div>
+  </div>
+
+  <img src="image/background for external structure2.png" class="white_background" />
+
+  <div class="areal">АРЕАЛ ОБИТАНИЯ</div>
+
+<img 
+    src="image/mapbefore.png" 
+    class="map" 
+    alt="карта" 
+    onclick="toggleAnnotations()" 
+  />
+
+  <!-- Вторая карта (появляется при клике) -->
+  <img 
+    src="image/mapafter.png" 
+    alt="карта потом" 
+    class="map" 
+    id="mapafter"
+  />
+
+  <!-- Подписи материков -->
+  <div class="label" style="top: 1499px; left: 1358px;">евразия</div>
+  <div class="label" style="top: 1486px; left: 366px;">северная америка</div>
+  <div class="label" style="top: 2006px; left: 1173px;">австралия</div>
+  <div class="label" style="top: 1649px; left: 745px;">север <br> африки</div>
+
+  <!-- Скрипт для переключения -->
+  <script>
+    function toggleAnnotations() {
+      const mapAfter = document.querySelector('#mapafter');
+      const labels = document.querySelectorAll('.label');
+
+      mapAfter.classList.toggle('visible');
+      labels.forEach(label => label.classList.toggle('visible'));
+    }
+  </script>
+  
+</body>
+</html>
+
+<footer class="footer-section">
+      <img src="image/footer-background.png" alt="Фон футера" class="footer-bg">
+      <img src="image/logo.png" alt="Логотип" class="footer-logo">
+      <div class="footer-title">РЫЖАЯ ЛИСИЦА</div>
+      <a href="https://www.vhutein.ru/" target="_blank"> <img src="image/vhutein.png" alt="ВХУТЕИН" class="footer-vhutein" /> </a>
+      <a href="https://vk.com/vhutein" target="_blank"> <img src="image/vk.png" alt="ВКонтакте" class="footer-vk">ВК</a>
+      <a href="https://t.me/vhutein" target="_blank"> <img src="image/tg.png" alt="Телеграм" class="footer-tg">ТГ</a>
+      <img src="image/footer-fox.png" alt="Лисичка" class="footer-fox">
+
+      <!-- Нижнее меню -->
+      <a href="index.html" class="footer-nav main">ГЛАВНАЯ</a>
+      <a href="external structure.html" class="footer-nav link1">СТРОЕНИЕ</a>
+      <a href="habitat.html" class="footer-nav link2">СРЕДА ОБИТАНИЯ</a>
+      <a href="foodandenemies.html" class="footer-nav link3">ПИТАНИЕ И ВРАГИ</a>
+      <a href="kitsune.html" class="footer-nav link4">О КИЦУНЭ</a>
+      <a href="art.html" class="footer-nav link5">СЛЕД В ИСКУССТВЕ</a>
+    </footer>
