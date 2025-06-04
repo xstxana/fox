@@ -173,7 +173,7 @@ body {
   display: flex; /* выстраиваем все .image в ряд */
   align-items: flex-start;
   padding-left: 186px; /* ваш существующий отступ слева */
-  /*padding-right: 186px;*/
+  padding-right: 186px;
   will-change: transform; /* для плавности анимации */
 }
 
