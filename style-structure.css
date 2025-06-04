@@ -5,8 +5,8 @@
 }
 
 html, body {
-  height: 4415px;
-  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+  /* height: 4345px; */
+  overflow-x: hidden; /* ВКЛЮЧАЕМ горизонтальный скролл */
 }
 
 body {
@@ -46,6 +46,13 @@ body {
   z-index: 10;
 }
 
+.pixel-header {
+  position: absolute;
+  width: 1920px;
+  height: 80px;
+  z-index: 10;
+}
+
 .logo {
   position: absolute;
   width: 58px;
@@ -69,33 +76,32 @@ body {
 }
 
 .main {
-    position: absolute;
   left: 134px;
-  top: 31px;
+  top: 33px;
 }
 
 .link1 {
-  left: 703px;
+  left: 784px;
   top: 33px;
 }
 
 .link2 {
-  left: 891px;
+  left: 971px;
   top: 33px;
 }
 
 .link3 {
-  left: 1160px;
-  top: 34px;
+  left: 1237px;
+  top: 33px;
 }
 
 .link4 {
-  left: 1425px;
+  left: 1501px;
   top: 33px;
 }
 
 .link5 {
-  left: 1613px;
+  left: 1688px;
   top: 33px;
 }
 
@@ -138,13 +144,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: justify;
   padding: 0 8px;  
   z-index: 1;
   transition: background-color 0.3s ease;
 }
 
-/* При наведении на кнопку подсвечиваем фон (необязательно) */
 .tag:hover {
   background-color: #E8DCC8;
 }
@@ -288,8 +293,8 @@ body {
   background: none;
   padding: 6px 12px;
   border-radius: 6px;
-  font-size: 26px;         /* <<< МЕНЯЙ размер шрифта тут */
-  color: #000000;             /* <<< МЕНЯЙ цвет текста тут */
+  font-size: 26px;
+  color: #000000;
   z-index: 5;
   pointer-events: none;
   opacity: 0;
@@ -354,7 +359,7 @@ body {
 .container {
   position: relative;
   width: 100%;
-  height: 4415px;
+  height: 4000px;
   background: none;
 }
 
@@ -362,7 +367,20 @@ body {
   position: absolute;
   width: 390px;
   height: 390px;
-  overflow: hidden;
+  overflow: visible;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: -70px; /* отступ вниз под фото */
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  padding: 5px 10px;
+  font-size: 20px;
+  color: #F9F7F3;
+  text-align: center;
+  z-index: 3;
 }
 
 /* Индивидуальные позиции */
@@ -437,8 +455,8 @@ body {
 /* Логотип */
 .footer-logo {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
   z-index: 1;
@@ -452,8 +470,9 @@ body {
   top: 172px;
   left: 532px;
   font-size: 20px;
-  color: #f2e8da;
+  color: #FBF8F2;
   font-family: "Anticva";
+  white-space: nowrap;
   z-index: 1;
 }
 
