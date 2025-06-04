@@ -6,7 +6,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+  overflow-x: hidden; /* ВКЛЮЧАЕМ горизонтальный скролл */
 }
 
 body {
@@ -21,27 +21,29 @@ body {
   width: 1920px;
   height: 6093px;
   background-color: #1D1D17; /* фоновый цвет */
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  height: 853px;
+  background-image: url("image/backgroundart.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
 
 .backgroundmiddle {
     position: absolute;
     width: 1920px;
     height: 3281px;
-    top: 530px;
-    z-index: -1;
-}
-
-.background::after {
-  content: "";
-position: absolute;
-left: 40px;
-right: 40px;
-height: 904px;
-background-image: url("image/backgroundart.png");
-background-size: cover; 
-z-index: 6;
+    top: 470px;
+    z-index: 0;
 }
 
 .pixel-header {
@@ -74,33 +76,32 @@ z-index: 6;
 }
 
 .main {
-    position: absolute;
   left: 134px;
-  top: 31px;
+  top: 33px;
 }
 
 .link1 {
-  left: 703px;
+  left: 784px;
   top: 33px;
 }
 
 .link2 {
-  left: 891px;
+  left: 971px;
   top: 33px;
 }
 
 .link3 {
-  left: 1160px;
-  top: 34px;
+  left: 1237px;
+  top: 33px;
 }
 
 .link4 {
-  left: 1425px;
+  left: 1501px;
   top: 33px;
 }
 
 .link5 {
-  left: 1613px;
+  left: 1688px;
   top: 33px;
 }
 
@@ -222,7 +223,7 @@ z-index: 6;
   position: absolute;
   width: 184px;
   height: 70px;
-  top: 1104px;
+  top: 1174px;
   left: 895px;
   font-size: 58px;
   white-space: nowrap;
@@ -242,10 +243,8 @@ z-index: 6;
 
 .image-hover-box {
   position: absolute;
-  width: 460px; /* или подгони под размер твоих изображений */
-  height: 673px;
+  /* width, height и позиции задаются у вас inline-стилями */
   overflow: hidden;
-  margin: 20px;
   cursor: pointer;
 }
 
@@ -253,7 +252,7 @@ z-index: 6;
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;     /* растягиваем, как сказали выше */
   transition: opacity 0.5s ease;
   top: 0;
   left: 0;
@@ -270,17 +269,19 @@ z-index: 6;
 
 .caption {
   position: absolute;
-  /* bottom: 20px; */
-  /* left: 0; */ 
-  width: 100%;
-  text-align: left;
+  /*top: 180px; */
+  left: 50%;
+  /* transform: translate(-50%, -50%);*/ 
+  width: 90%;           /* или нужное число px / % */
+  text-align: center;
   font-size: 35px;
   color: white;
   font-family: "Cormorant", serif;
   z-index: 7;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease 0.2s;
   pointer-events: none;
+  white-space: normal;  /* чтобы текст переносился по строкам */
 }
 
 .image-hover-box:hover .overlay-image,
@@ -338,11 +339,11 @@ z-index: 6;
 /* Логотип */
 .footer-logo {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
-  z-index: 5;
+  z-index: 1;
 }
 
 /* "Рыжая лисица" */
@@ -353,9 +354,10 @@ z-index: 6;
   top: 172px;
   left: 532px;
   font-size: 20px;
-  color: #f2e8da;
+  color: #FBF8F2;
   font-family: "Anticva";
-  z-index: 5;
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .footer-vhutein {
