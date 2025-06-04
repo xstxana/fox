@@ -6,7 +6,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+  overflow-x: hidden; /* ВКЛЮЧАЕМ горизонтальный скролл */
 }
 
 body {
@@ -68,33 +68,32 @@ body {
 }
 
 .main {
-    position: absolute;
   left: 134px;
-  top: 31px;
+  top: 33px;
 }
 
 .link1 {
-  left: 703px;
+  left: 784px;
   top: 33px;
 }
 
 .link2 {
-  left: 891px;
+  left: 971px;
   top: 33px;
 }
 
 .link3 {
-  left: 1160px;
-  top: 34px;
+  left: 1237px;
+  top: 33px;
 }
 
 .link4 {
-  left: 1425px;
+  left: 1501px;
   top: 33px;
 }
 
 .link5 {
-  left: 1613px;
+  left: 1688px;
   top: 33px;
 }
 
@@ -197,41 +196,70 @@ body {
 }
 
 /* Секция врагов */
+/* === Существующий контейнер с врагами === */
 .enemies-section {
-  margin-top: 1240px; /* регулируй отступ, чтобы враги появлялись ниже */
-  margin-left: 0px;
+  position: absolute;
+  left: 284px;
+  top: 1242px;
   text-align: center;
   z-index: 4;
-  position: absolute;
 }
 
-/* Заголовок */
 .enemies-title {
   font-size: 58px;
   color: #F6F3EF;
   margin-bottom: 40px;
-  left: 350px;
+  /* left: 350px; — его можно убрать, если вы хотите всегда центрировать */
 }
 
-/* Контейнер с изображениями врагов */
+/* === Блок, внутри которого хранятся враги === */
 .enemies-images {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 90px;
   flex-wrap: nowrap;
   z-index: 6;
 }
 
-/* Изображения врагов */
-.enemy-img {
-  width: 635px; /* или 635px, как у тебя было, если нужно крупнее */
-  height: auto;
-  transition: transform 0.5s;
-  z-index: 6;
+/* === Каждый враг: контейнер для изображения + подписи === */
+.enemy-item {
+  position: relative;      /* важно, чтобы подпись позиционировалась относительно этого блока */
+  cursor: pointer;         /* чтобы было видно, что на картинку можно навести */
 }
 
-.enemy-img:hover {
+/* === Собственно изображение врага === */
+.enemy-item .enemy-img {
+  width: 386px;            /* ваш изначальный размер */
+  height: auto;
+  transition: transform 0.5s ease; /* плавное увеличение */
+  display: block;
+}
+
+/* При наведении на контейнер — увеличиваем само изображение */
+.enemy-item:hover .enemy-img {
   transform: scale(1.05);
+}
+
+/* === Подпись, которая появляется при наведении === */
+.enemy-label {
+  position: absolute;
+  top: 609px;            /* отступ снизу контейнера; */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  color: #FFFFFF; 
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;     /* не переносим текст на новую строку */
+  opacity: 0;              /* изначально скрыта */
+  transition: opacity 0.3s ease; /* плавное появление/исчезновение */
+  z-index: 7;              /* поверх картинки */
+  pointer-events: none;    /* если вдруг мышка над подписью — событие останется на .enemy-item */
+}
+
+/* При наведении на контейнер .enemy-item — делаем подпись видимой */
+.enemy-item:hover .enemy-label {
+  opacity: 1;
 }
 
 /* === НИЖНИЙ ХЕДЕР (ФУТЕР) === */
@@ -255,8 +283,8 @@ body {
 /* Логотип */
 .footer-logo {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
   z-index: 1;
@@ -270,8 +298,9 @@ body {
   top: 172px;
   left: 532px;
   font-size: 20px;
-  color: #f2e8da;
+  color: #FBF8F2;
   font-family: "Anticva";
+  white-space: nowrap;
   z-index: 1;
 }
 
