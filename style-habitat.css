@@ -213,8 +213,8 @@ body {
 /* Вторая карта, по умолчанию скрыта */
 #mapafter {
   position: absolute;
-  top: 1262px;
-  left: 209px;
+  top: 1245.8px;
+  left: 214.5px;
   width: 1449px;
   opacity: 0;
   visibility: hidden;
