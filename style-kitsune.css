@@ -6,7 +6,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+  overflow-x: hidden; /* ВКЛЮЧАЕМ горизонтальный скролл */
 }
 
 body {
@@ -66,33 +66,32 @@ z-index: 1;
 }
 
 .main {
-    position: absolute;
   left: 134px;
-  top: 31px;
+  top: 33px;
 }
 
 .link1 {
-  left: 703px;
+  left: 784px;
   top: 33px;
 }
 
 .link2 {
-  left: 891px;
+  left: 971px;
   top: 33px;
 }
 
 .link3 {
-  left: 1160px;
-  top: 34px;
+  left: 1237px;
+  top: 33px;
 }
 
 .link4 {
-  left: 1425px;
+  left: 1501px;
   top: 33px;
 }
 
 .link5 {
-  left: 1613px;
+  left: 1688px;
   top: 33px;
 }
 
@@ -166,11 +165,11 @@ z-index: 1;
 }
 
 .kits {
-  font-family: "Cormorant", serif;
+  font-family: "Cormorant";
   position: absolute;
   width: 656px;
   height: 180px;
-  top: 2789px;
+  top: 2730px;
   left: 931px;
   font-size: 35px;
   line-height: 1.5;
@@ -179,11 +178,11 @@ z-index: 1;
 }
 
 .injapan {
-  font-family: "Cormorant", serif;
+  font-family: "Cormorant";
   position: absolute;
   width: 693px;
   height: 180px;
-  top: 3877px;
+  top: 3784px;
   left: 321px;
   font-size: 35px;
   line-height: 1.5;
@@ -192,19 +191,31 @@ z-index: 1;
 }
 
 .picture1 {
-    position: absolute;
-    width: 633px;
-    top: 2462.46px;
-    left: 262px;
-    z-index: 3;
+  position: absolute;
+  width: 633px;
+  top: 2462.46px;
+  left: 262px;
+  z-index: 3;
 }
 
 .picture2 {
-    position: absolute;
-    width: 692px;
-    top: 3547px;
-    left: 1014px;
-    z-index: 3;
+  position: absolute;
+  width: 633px;
+  top: 3547px;
+  left: 1014px;
+  z-index: 3;
+}
+
+/* Анимация при скролле */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .flower-left {
@@ -225,6 +236,30 @@ z-index: 1;
     z-index: 3;
 }
 
+/* Общие классы для появления */
+.fade-left, .fade-right {
+  opacity: 0;
+  transform: translateX(0); /* начальное значение */
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Появление слева */
+.fade-left {
+  transform: translateX(-100px);
+}
+
+/* Появление справа */
+.fade-right {
+  transform: translateX(100px);
+}
+
+/* Когда элемент виден */
+.fade-left.visible, .fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 .background2 {
 position: absolute;
 left: 51px;
@@ -243,11 +278,11 @@ z-index: 1;
 }
 
 .japanthink {
-  font-family: "Cormorant", serif;
+  font-family: "Cormorant";
   position: absolute;
   width: 605px;
   height: 102px;
-  top: 5877px;
+  top: 5817px;
   left: 658px;
   font-size: 42px;
   line-height: 1.5;
@@ -277,11 +312,11 @@ z-index: 1;
 /* Логотип */
 .footer-logo {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
-  z-index: 5;
+  z-index: 1;
 }
 
 /* "Рыжая лисица" */
@@ -292,9 +327,10 @@ z-index: 1;
   top: 172px;
   left: 532px;
   font-size: 20px;
-  color: #f2e8da;
+  color: #FBF8F2;
   font-family: "Anticva";
-  z-index: 5;
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .footer-vhutein {
