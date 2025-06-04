@@ -56,6 +56,8 @@ z-index: 1;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
+  line-height: 1.2;
+  padding-top: 2px; /* добавит запас сверху */
   color: #1D0B0B;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -316,7 +318,7 @@ z-index: 1;
   height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* "Рыжая лисица" */
@@ -330,7 +332,7 @@ z-index: 1;
   color: #FBF8F2;
   font-family: "Anticva";
   white-space: nowrap;
-  z-index: 1;
+  z-index: 5;
 }
 
 .footer-vhutein {
@@ -385,13 +387,13 @@ z-index: 1;
 
 .footer-nav.main {
   width: 97px;
-  top: 595px;
+  top: 593px;
   left: 336px;
 }
 
 .footer-nav.link1 {
   width: 115px;
-  top: 595px;
+  top: 593px;
   left: 488px;
 }
 
