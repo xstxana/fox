@@ -6,7 +6,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: auto; /* ВКЛЮЧАЕМ горизонтальный скролл */
+  overflow-x: hidden; /* ВКЛЮЧАЕМ горизонтальный скролл */
 }
 
 body {
@@ -59,31 +59,31 @@ body {
 
 .main {
   left: 134px;
-  top: 31px;
+  top: 33px;
 }
 
 .link1 {
-  left: 703px;
+  left: 784px;
   top: 33px;
 }
 
 .link2 {
-  left: 891px;
+  left: 971px;
   top: 33px;
 }
 
 .link3 {
-  left: 1160px;
-  top: 34px;
+  left: 1237px;
+  top: 33px;
 }
 
 .link4 {
-  left: 1425px;
+  left: 1501px;
   top: 33px;
 }
 
 .link5 {
-  left: 1613px;
+  left: 1688px;
   top: 33px;
 }
 
@@ -98,10 +98,10 @@ body {
 /* === ЛЕНТА === */
 .ribbon {
   position: absolute;
-  top: 1545px;
+  top: 2066px;
   left: 0;
-  width: 1920px;
-  height: 2000px;
+  width: 100%;      /* Тянем на всю ширину окна */
+  height: 703px;
   z-index: 0;
 }
 
@@ -121,12 +121,11 @@ body {
   position: absolute;
   width: 1212px;
   height: 333px;
-  top: 2260px;
+  top: 2356px;
   left: 399px;
   font-size: 40px;
-  color: #3b2a1a;
+  color: #1F190F;
   text-align: center;
-  font-weight: bold;
   z-index: 1;
 }
 
@@ -194,11 +193,11 @@ body {
 
 /* === ТЕКСТ О ЛИСЕ === */
 .fox-text {
-  font-family: "Cormorant", serif;
+  font-family: "Cormorant";
   position: absolute;
   width: 677px;
   height: 225px;
-  top: 3671px;
+  top: 3621px;
   left: 1017px;
   font-size: 35px;
   line-height: 1.5;
@@ -209,26 +208,25 @@ body {
 /* === НИЖНИЙ ХЕДЕР (ФУТЕР) === */
 .footer-section {
   position: relative;
-  width: 1920px;
+  width: 100%;      /* теперь тянется на всю ширину окна */
   height: 723px;
-  top: 4442px;
+  top: 4442px;      /* или задайте через отступы у main */
 }
 
-/* Фон футера */
 .footer-bg {
   position: absolute;
-  width: 1920px;
-  height: 723px;
+  width: 100%;      /* тоже растягиваем фон */
+  height: 100%;     /* можно оставить 723px, если хотите фиксированную высоту */
   top: 0;
-  left: 0px;
+  left: 0;
   z-index: 0;
 }
 
 /* Логотип */
 .footer-logo {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   top: 144px; /* 4586 - 4442 */
   left: 433px;
   z-index: 1;
@@ -242,8 +240,9 @@ body {
   top: 172px;
   left: 532px;
   font-size: 20px;
-  color: #f2e8da;
+  color: #FBF8F2;
   font-family: "Anticva";
+  white-space: nowrap;
   z-index: 1;
 }
 
