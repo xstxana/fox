@@ -34,23 +34,56 @@
     <img src="image/fan 1.png" class="fan1" />
     <img src="image/backgroundforkitsune.png" class="backgroundmiddle" />
 
-    <div class="kits">
-      Кицунэ — мифическое <br>
-      существо-ёкай в японской мифологии <br>
-      и фольклоре. Лисица, обладающая сверхъестественными способностями
-    </div>
+    <div class="kits fade-in">
+  Кицунэ — мифическое <br>
+  существо-ёкай в японской мифологии <br>
+  и фольклоре. Лисица, обладающая сверхъестественными способностями
+</div>
 
-    <div class="injapan">
-      В японском фольклоре кицунэ часто принимают облик молодых женщин и юношей  <br>
-      а также представляются хитрыми обманщицами <br>
-      (иногда и верными компаньонами)
-    </div>
+<div class="injapan fade-in">
+  В японском фольклоре кицунэ часто принимают облик молодых женщин и юношей <br>
+  а также представляются хитрыми обманщицами <br>
+  (иногда и верными компаньонами)
+</div>
 
-    <img src="image/picture1.png" class="picture1" />
-    <img src="image/picture2.png" class="picture2" />
+<img src="image/picture1.png" class="picture1 fade-in" />
+<img src="image/picture2.png" class="picture2 fade-in" />
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // убрать наблюдение после первого показа
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-in').forEach(elem => {
+    observer.observe(elem);
+  });
+</script>
     
-    <img src="image/flowerleft.png" class="flower-right" />
-    <img src="image/flowerright.png" class="flower-left" />
+   <img src="image/flowerleft.png" class="flower-right fade-right" />
+<img src="image/flowerright.png" class="flower-left fade-left" />
+
+<script>
+  function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.fade-left, .fade-right');
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScrollAnimations);
+  window.addEventListener('load', handleScrollAnimations);
+</script>
 
     <img src="image/backgroundkitsune.png" class="background2" />
     <img src="image/fan 2.png" class="fan2" />
