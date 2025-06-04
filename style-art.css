@@ -171,11 +171,19 @@ body {
   position: sticky;
   top: 500px; /* «Прилипает» к верху экрана, когда доходим до секции */
   display: flex; /* выстраиваем все .image в ряд */
-  align-items: flex-start;
-  padding-left: 186px; /* ваш существующий отступ слева */
-  padding-right: 186px;
+  /*left: 186px; */
+  align-items: flex-start; 
   will-change: transform; /* для плавности анимации */
 }
+
+.scroll-padding-left
+/*.scroll-padding-right*/ {
+  width: 186px;
+  flex-shrink: 0;
+  height: 1px;
+  background: transparent;
+}
+
 
 /* === Блок с картинкой и подписью === */
 .image {
@@ -194,17 +202,16 @@ body {
 }
 
 /* === Подпись под картинкой === */
-.caption {
+.caption1 {
   position: absolute;
   bottom: -60px;      /* рисуем текст НАД картинкой или чуть сбоку */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  font-size: 32px;
+  font-size: 42px;
   color: #F8F4E9;
   text-align: center;
-  font-family: "Cormorant", serif;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  font-family: "Cormorant";
   z-index: 2;
 }
 
@@ -267,11 +274,11 @@ body {
   opacity: 0;
 }
 
-.caption {
+.caption2 {
   position: absolute;
-  /*top: 180px; */
+  top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%);*/ 
+  transform: translate(-50%, -50%);
   width: 90%;           /* или нужное число px / % */
   text-align: center;
   font-size: 35px;
@@ -285,7 +292,7 @@ body {
 }
 
 .image-hover-box:hover .overlay-image,
-.image-hover-box:hover .caption {
+.image-hover-box:hover .caption2 {
   opacity: 1;
 }
 
