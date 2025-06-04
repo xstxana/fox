@@ -62,11 +62,12 @@ body {
 }
 
 .nav-link {
-    line-height: 1.4;
   position: absolute;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
+  line-height: 1.4;
+  padding-top: 2px; /* добавит запас сверху */
   color: #f2e8da;
   transition: transform 0.3s ease, color 0.3s ease;
 }
